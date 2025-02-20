@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book List</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
+  <!-- GoatCounter, to just count number of visitors without tracking other user data. -->
+  <script data-goatcounter="https://los-altos-rotary-satellite.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  
+  </head>
+<body>
+  <h1>Books with themes of Neurodiversity</h1>
+  <p>Distributed by the Los Altos Rotary Satellite Club</p>
+  <table>
+    <thead>
+      <tr>
+        <th class="mobile-title">Title</th>
+        <th class="desktop-only">Author</th>
+        <th class="desktop-only">Key Themes</th>
+        <th class="desktop-only">Description</th>
+        <th class="mobile-isbn">ISBN</th>
+        <th class="desktop-only">Target Age</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script>
+    const books = `Top 10,For therapists,Book Title,Author,Key themes,Genre,Description,ISBN,Amazon Price,Target Age
+x,,"A Boy Called Bat (The Bat Series, 1)","Elana K. Arnold, Charles Santoso",Autism,,"Every child will root for Bat as he navigates the challenges that come with friendship and change, not to mention skunk parenting. ",9780062445827,$6.99,Elementary
+,,"Bat and the Waiting Game (The Bat Series, 2)","Elana K. Arnold, Charles Santoso",Autism,,An irresistible story of friendship in this widely acclaimed series starring an unforgettable boy on the autism spectrum.,9780062445865,$6.99,Elementary
+,,"Bat and the End of Everything (The Bat Series, 3)","Elana K. Arnold, Charles Santoso",Autism,,"Follows Bat, an autistic boy, as he navigates change and emotional challenges, emphasising self-acceptance and adaptability.",9780062798459,$18.16,Elementary
+x,x,A Day With No Words,"Tiffany Hammond, Kate Cosgrove",Autism,,"Portrays a nonverbal autistic child, showing the many ways we can communicate without words, building understanding and empathy.",9781736949795,,Elementary
+,,A Shelter for Sadness,"Anne Booth, David Litchfield",Depression,,"Encourages children to acknowledge and sit with their sadness, providing a compassionate approach to managing difficult emotions.",9781682633397,$15.99,Elementary
+,,"A Whole New Ballgame: A Rip and Red Book (Rip and Red, 1)","Phil Bildner, Tim Probert",Autism,,"Features diverse characters, including a boy with autism and another with ADHD, celebrating their friendship and unique strengths.",9781250079763,,Elementary
+x,x,"Aaron Slater, Illustrator: A Picture Book (The Questioneers)","Andrea Beaty, David Roberts",Dyslexia,Fiction,"An uplifting story about the power of art, finding your voice, and telling your story even when you’re out of step with your peers",9781419753961,$12.90,Elementary
+,,"Ada Twist, Scientist: A Picture Book (The Questioneers)","Andrea Beaty, David Roberts",Neurodivergent Thinking,Fiction,"Ada’s insatiable curiosity and questioning mindset exemplify a neurodivergent approach to learning, celebrating her endless creativity.",9781419721373,$10.58,Elementary
+,,"Benji, the Bad Day, and Me","Sally J. Pla, Ken Min",Autism,,"A story about siblings, where one child has autism, showing the importance of empathy and understanding family dynamics.",9781620143452,$11.95,Elementary
+x,x,Brilliant Bea: A Story for Kids With Dyslexia and Learning Differences,"Shaina Rudolph, Mary Vukadinovich",Dyslexia,,"Celebrates the strengths of children with dyslexia, showing that learning can be approached differently, and differences are powerful.",9781433837418,$14.75,Elementary
+,x,"Come On, Calm!",Kelsey Brown,Emotional Regulation ,Self help,"Explores techniques for self-regulation, helping children understand ways to calm themselves when overwhelmed or stressed.",9781643072470,$14.95,Elementary
+,x,Don't Hug Doug: (He Doesn't Like It),"Carrie Finison, Daniel Wiseman",Sensory Processing Challenges,,"Teaches the importance of respecting personal boundaries, especially for children with sensory sensitivities who may dislike physical touch.",9781984813022,$12.49,Elementary
+,,Masterpiece: an inclusive kids book celebrating a child on the autism spectrum (The Incredible Kids),"Alexandra Hoffman, Beatriz Mello",Autism,,"Explores acceptance and friendship, illustrating that children with autism are valuable and have much to contribute in their own special ways.",9781778071041,$12.99,Elementary
+,,"Mighty Jack (Mighty Jack, 1)",Ben Hatke,Autism,Fantasy,,9781626722644,$11.66,Elementary
+,,"Mighty Jack and the Goblin King (Mighty Jack, 2)",Ben Hatke,Autism,Fantasy,,9781626722668,$10.49,Elementary
+,x,My Wandering Dreaming Mind,"Merriam Sarcia Saunders, Tammie Lyon",ADHD,,"Focuses on a child with a wandering mind, celebrating their creativity while exploring ways to navigate attention challenges.",9781433831836,$16.99,Elementary
+,,Red,Scholastic,Identity and Self-Expression,,"Tells the story of a blue crayon labelled ""red,"" offering a lesson in being true to oneself despite external expectations.",9781401223465,$14.24,Elementary
+,,The Alphabet War: A Story about Dyslexia,"Diane Burton Robb, Gail Piazza",Dyslexia,,"Tells the journey of a child learning to read with dyslexia, emphasising perseverance, self-advocacy, and overcoming educational challenges.",9780807503027,$8.09,Elementary
+x,,"The Boy with Big, Big Feelings (The Big, Big Series, 1)","Britney Winn Lee, Jacob Souva",Emotional Sensitivity,,"Highlights a boy who feels emotions intensely, helping children understand and accept big feelings as part of who they are.",9781506454504,$11.99,Elementary
+x,,"The Girl Who Thought in Pictures: The Story of Dr. Temple Grandin (Amazing Scientists, 1)","Julia Finley Mosca, Daniel Rieley",Autism,Biography,"A biographical story about Dr. Temple Grandin, celebrating her unique way of thinking and contributions to science and animal welfare.",9781943147304,$14.99,Elementary
+,,"The Girl with Big, Big Questions (The Big, Big Series, 2)","Britney Winn Lee, Jacob Souva",Neurodivergent Thinking,,"Celebrates inquisitiveness and the neurodivergent tendency to ask deep, meaningful questions, despite societal pressures to conform.",9781506473789,$10.99,Elementary
+,,"The Invisible String (The Invisible String, 1)","Patrice Karst, Joanne Lew-Vriethoff",General Emotional Sensitivity,,"A gentle story about connection, addressing separation anxiety and how emotional bonds endure even when we're not physically together.",9780316486231,$6.99,Elementary
+,x,The Princess and the Fog: A Story for Children with Depression,"Lloyd Jones, Melinda Edwards",Depression,Self help,"A metaphorical story that explains depression in an accessible way, showing children that help is available to manage their emotions.",9781849056557,$17.95,Elementary
+,,The Whatifs,"Emily Kilgore, Zoe Persico",Anxiety,Self help,"Addresses the challenges of “what if” worries, helping children understand and manage anxiety by focusing on the present moment.",9781499810295,$13.72,Elementary
+,x,Too Sticky!: Sensory Issues with Autism,"Jen Malia, Joanne Lew-Vriethoff",Sensory Processing Challenges,Self help,"Portrays a young girl with autism navigating sensory sensitivities, highlighting her bravery in facing everyday challenges.",9780807580264,$16.19,Elementary
+x,,Uniquely Wired: A Story About Autism and Its Gifts for Kids ages 6-9,"Julia Cook, Anita DuFalla",Autism,,"Celebrates the unique perspectives and abilities of children on the autism spectrum, showing how they may experience and see the world differently.",9781944882198,$10.76,Elementary
+x,,When Sophie Thinks She Can't...,Molly Bang,Growth Mindset,,"Encourages resilience and self-confidence, particularly for children who may struggle with learning challenges or doubting their abilities.",9781338152982,$11.29,Elementary
+,x,When things get too loud: A story about sensory overload (Sensory Series),Anne Alcott,Sensory Processing Challenges,,"Provides insights into sensory overload, helping children understand and manage situations when sounds become overwhelming.",9789083160801,$10.90,Elementary
+,,Where Oliver Fits,Cale Atkinson,Fitting in and Self-Acceptance,,"Follows a puzzle piece trying to find his place, encouraging children to accept themselves rather than changing to fit in.",9781101919071,$16.65,Elementary
+,x,"Wiggles, Stomps, and Squeezes Calm My Jitters Down","Lindsey Rowe Parker, Rebecca Burgess",Sensory Processing Challenges,Self help,"Follows a child with sensory needs, exploring different strategies like movement to help them manage emotions and stay calm.",9781945448928,$13.60,Elementary
+x,,A Kind of Spark,Elle McNicoll,"Autism, activism, historical injustices",Fiction,"Follows an autistic girl on her quest for justice in her town’s history, encouraging resilience and neurodivergent pride.",9780593374252,$7.43,Upper Elementary/Middle
+,x,Amazing Me: A Kids Guide to Understanding Autism,"Dr. McKenzie Schneider, Sydney Saathoff",Autism,Non-fiction,"A guide that helps children understand autism, encouraging acceptance and understanding of peers on the spectrum.",1057621317009,$14.95,Upper Elementary/Middle
+,x,Button Pusher,Tyler Page,ADHD,Graphic Novel,"A memoir-driven realistic graphic novel about Tyler, a child who is diagnosed with ADHD and has to discover for himself how to best manage it.",9781250758330,$7.95,Upper Elementary/Middle
+,x,"Consent (for Kids!): Boundaries, Respect, and Being in Charge of YOU (A Be Smart About Book, 1)",Rachel Brian,Boundaries,Non-fiction,"A child-friendly guide on personal boundaries and respect, teaching kids the importance of consent and self-empowerment.",9780316457736,$9.99,Upper Elementary/Middle
+x,,Counting by 7s,Holly Goldberg Sloan,"Autism, loss, friendship",Fiction,"Follows an autistic girl as she navigates grief and finds a sense of family, celebrating her unique perspective on the world.",9780142422861,$6.78,Upper Elementary/Middle
+,,Each Tiny Spark,Pablo Cartaya,ADHD,Fiction,"Explores a girl’s experience with ADHD and how it affects her family dynamics, particularly around cultural identity and communication.",9780451479723,$8.33,Upper Elementary/Middle
+x,,Fish in a Tree,Lynda Mullaly Hunt,"Dyslexia, self-acceptance, resilience",Fiction,"A powerful story about a girl with dyslexia finding her voice and identity, underscoring the importance of supportive teachers and self-belief.",9780142426425,$7.00,Upper Elementary/Middle
+,,"Get a Grip, Vivy Cohen!",Sarah Kapit,Autism,Fiction,"Follows an autistic girl with a dream to play baseball, highlighting themes of determination, friendship, and breaking barriers.",9780525554189,$8.39,Upper Elementary/Middle
+x,,Guts: A Graphic Novel,Raina Telgemeier,"Anxiety, self-advocacy, personal growth",Graphic Novel,"Based on the author’s experience, this story addresses anxiety and coping mechanisms, encouraging resilience and open dialogue.",9780545852500,$7.00,Upper Elementary/Middle
+,,Hacking the Code: The Ziggety Zaggety Road of a Dyslexic Kid,"Gea Meijering, Mads Johan Øgaard",Dyslexia,Fiction,"A story about a dyslexic child navigating school, emphasising resilience and strategies for overcoming learning challenges.",9781736626108,$12.99,Upper Elementary/Middle
+,,Holes (Holes Series),"Louis Sachar, Vladimir Radunsky",Behavioural Challenges,Adventure,"Explores friendship, justice, and resilience as boys face challenges and discover secrets at a desert camp.",9780440414803,$6.99,Upper Elementary/Middle
+,,"Joey Pigza Swallowed the Key: (National Book Award Finalist) (Joey Pigza, 1)",Jack Gantos,ADHD,Fiction,"A humorous and heartfelt look at Joey’s challenges with ADHD, including impulse control and family relationships.",9781250061683,$6.99,Upper Elementary/Middle
+,,"Joey Pigza Loses Control: (Newbery Honor Book) (Joey Pigza, 2)",Jack Gantos,ADHD,Fiction,"Joey navigates complex family dynamics while managing his ADHD, emphasising resilience and the impact of a supportive environment.",9781250061676,$8.99,Upper Elementary/Middle
+,,"What Would Joey Do? (Joey Pigza, 3)",Jack Gantos,ADHD,Fiction,Continues Joey’s journey as he faces new challenges and learns valuable lessons about self-control and responsibility.,9781250061690,$13.23,Upper Elementary/Middle
+,,"I Am Not Joey Pigza (Joey Pigza, 4)",Jack Gantos,ADHD,Fiction,"Explores Joey’s evolving sense of self as he navigates ADHD and family expectations, highlighting growth and self-acceptance.",9781250061669,$6.99,Upper Elementary/Middle
+,,"The Key That Swallowed Joey Pigza (Joey Pigza, 5)",Jack Gantos,ADHD,Fiction,"Joey faces new struggles and family responsibilities, showcasing resilience and",9781250068071,$5.99,Upper Elementary/Middle
+,,"Last Pick (Last Pick, 1)",Jason Walz,Neurodiverse Heroes,Science Fiction/ Graphic Novel,"Messages about valuing all humans (from an author’s note: “Whatever the world sees as ‘different’ is exactly what the world needs”) add meaningful layers to this fast-paced adventure featuring a cast of likable heroes and creepy, memorable aliens",9781626728912,$18.99,Upper Elementary/Middle
+,,"Last Pick: Born to Run (Last Pick, 2)",Jason Walz,Neurodiverse Heroes,Science Fiction/ Graphic Novel,A fun and inspiring story (with great art) about how the most overlooked people in society are often its biggest heroes. A must-read for any kid feeling left out.,9781626728936,$13.61,Upper Elementary/Middle
+,,"Last Pick: Rise Up (Last Pick, 3)",Jason Walz,Neurodiverse Heroes,Science Fiction/ Graphic Novel,"This is an adventure-filled sci-fi novel that sensitively highlights the humanity and heroism of those whom society sees as marginalized or unimportant. The characters in this dystopian landscape simply exist in their identities, free of stereotypes, while acknowledging the challenges they face... A must for fans of the earlier installments",9781626728950,,Upper Elementary/Middle
+x,x,Living with Viola,Rosena Fung,"Anxiety, cultural identity, self-compassion",Fiction/ Graphic Novel,"Livy is already having trouble fitting in as the new girl at school—and then there’s Viola. Viola is Livy’s anxiety brought to life, a shadowy twin that only Livy can see or hear. Refreshingly real exploration of mental health, cultural differences, and the trials of middle school.",9781773215495,$24.95,Upper Elementary/Middle
+,,Me and Sam-Sam Handle the Apocalypse,Susan Vaught,Autism,Mystery,"An autistic girl and her dog solve a neighbourhood mystery, showcasing her resilience and unique approach to problem-solving.",9781534425019,$8.99,Upper Elementary/Middle
+x,,Mockingbird,Kathryn Erskine,"Autism, grief, perspective-taking",Fiction,"Follows a young autistic girl as she learns to process complex emotions, particularly around grief, with a message of empathy.",9780446310789,$7.42,Upper Elementary/Middle
+,,OCDaniel,Wesley King,OCD,Fiction,"A coming-of-age story centred on a boy with OCD, offering a perspective on the challenges and bravery involved in facing mental health issues.",9781481455329,$14.54,Upper Elementary/Middle
+,,Planet Earth Is Blue,Nicole Panteleakos,Autism,Fiction,"The story of a nonverbal autistic girl and her connection to her sister, offering insight into her inner world and unique way of experiencing life.",9780525646570,$7.43,Upper Elementary/Middle
+,,Popcorn,Rob Harrell,"Anxiety, OCD",Fiction,,9780593697924,,Upper Elementary/Middle
+x,,Rain Reign,Ann M. Martin,"Autism, familial bonds, advocacy",Fiction,"Follows a girl with autism and her bond with her dog, emphasising themes of family, loyalty, and resilience.",9781491530535,$7.00,Upper Elementary/Middle
+,,Rules (Scholastic Gold),Cynthia Lord,Autism,Fiction,"Follows a girl with an autistic brother, exploring family dynamics, understanding, and the complexity of sibling relationships.",9780545666206,$6.82,Upper Elementary/Middle
+,,Sara and the Search for Normal,Wesley King,"Anxiety, OCD, and Self-Acceptance",Fiction,"Follows a girl with anxiety and OCD on her journey to self-acceptance, with a focus on friendship and understanding.",9781534421134,$8.36,Upper Elementary/Middle
+x,,Sidetracked,Diana Harmon Asher,"ADHD, Anxiety",Fiction,"Joseph, a boy with attention deficit disorder (ADD) and anxiety, joins his school's cross-country team and finds his footing.",9781419726019,$15.16,Upper Elementary/Middle
+,,Some Kind of Happiness,Claire Legrand,Depression and Anxiety,Fiction,Blends fantasy and reality as a girl facing anxiety and depression learns about herself through a family secret and the power of imagination.,9781442466029,$7.52,Upper Elementary/Middle
+x,,Song for a Whale,Lynne Kelly,"Deafness, perseverance, connection",Fiction,"The story of a deaf girl connecting with a lonely whale, offering an exploration of isolation, empathy, and perseverance.",9781524770235,$8.36,Upper Elementary/Middle
+,,"Stuntboy, in the Meantime (1)","Jason Reynolds, Raúl the Third",Anxiety,Graphic Novel,"A humorous and action-packed story of a young boy managing his anxiety through his alter-ego ""Stuntboy"".",9781534418165,$9.81,Upper Elementary/Middle
+,x,The Awesome Autistic Go-To Guide: A Practical Handbook for Autistic Teens and Tweens (Awesome Guides for Amazing Autistic Kids),"Yenn Purkis, Tanya Masterman",Autism,Non-Fiction,,9781787753167,$15.99,Upper Elementary/Middle
+,,The Goldfish Boy,Lisa Thompson,OCD ,Mystery,"A mystery about a boy with OCD who observes his neighbours, emphasising themes of courage and community connection.",9781338053920,$8.36,Upper Elementary/Middle
+,,The Love Letters of Abelard and Lily,Laura Creedle,ADHD,Fiction,"A tender story of two teens, one with ADHD and another with a genetic condition, navigating a budding relationship and understanding their differences.",9780544932050,$10.08,Upper Elementary/Middle
+x ,,The Miscalculations of Lightning Girl,Stacy McAnulty,"Autism, Fitting In",Fiction,"Focuses on a girl with autism and a gift for mathematics, exploring themes of self-acceptance and friendship.",9781524767570,$7.99,Upper Elementary/Middle
+,,The Unteachables,Gordan Korman,Challenging Labels,Fiction,,9780062563880,$7.97,Upper Elementary/Middle
+x ,,Turtles All the Way Down,John Green,"OCD, anxiety, friendship",Fiction,"Explores a teen’s journey with OCD, highlighting her inner struggles and the impact of her condition on friendships and self-perception.",9780525555360,$9.81,Upper Elementary/Middle
+,,Under Shifting Stars,Alexandra Latos,Autism,Fiction,"Explores the journey of neurodiverse twins as they process grief and their evolving identities, emphasising self-discovery and sibling bonds.",9780358067757,$6.97 + $3.99 shipping,Upper Elementary/Middle
+,,"Underdogs (Underdogs, 1)",Chris Bonnello,Neurodiverse Heroes,Science Fiction,"Introduces a group of neurodiverse teens in a dystopian world, challenging stereotypes and showcasing their resilience.",9781789650358,$9.02 + $3.99 shipping,Upper Elementary/Middle
+,,"Underdogs: Tooth and Nail (Underdogs, 2)",Chris Bonnello,Neurodiverse Heroes,Science Fiction,"A group of neurodiverse teens face dystopian challenges, highlighting their unique strengths in a story of survival.",9781789650952,$16.04,Upper Elementary/Middle
+,,"Underdogs: Acceleration (Underdogs, 3)",Chris Bonnello,Neurodiverse Heroes,Science Fiction,Continues the tale of neurodiverse teens using their abilities to overcome obstacles and navigate complex social dynamics.,9781800180888,$16.95,Upper Elementary/Middle
+,,Ungifted,Gordon Korman,Giftedness,Fiction,"A humorous story of a troublemaker placed in a gifted programme, exploring themes of identity, friendship, and self-acceptance.",9780061742675,$5.99,Upper Elementary/Middle
+,,"Welcome Back, Maple Mehta-Cohen",Kate McGovern,Dyslexia,Fiction,"A story about a girl with dyslexia who faces challenges at school, exploring themes of friendship, honesty, and self-confidence.",9781536215588,$9.79,Upper Elementary/Middle
+,x,Wonderfully Wired Brains: An Introduction to the World of Neurodiversity,"Louise Gooding, Ruth Burrows",Neurodiversity Overview,Non-fiction,"Provides an introductory look at neurodiversity, celebrating the unique ways different brains work and thrive.",9780744074635,$12.35,Upper Elementary/Middle
+,,Marcelo in the Real World,Francisco X. Stork,,,,9780545056908,$8.66,High School
+,,The Easy Part of Impossible,Sarah Tomp,,,,9780062898289,$16.66,High School
+,,"Maybe An Artist, A Graphic Memoir",Liz Montague,,,,9780593307816,$9.89,High School`;
+
+
+    function parseCSV(csv) {
+      const rows = [];
+      const lines = csv.split('\n');
+      const headers = lines[0].split(','); // Get headers (not used in this example but good practice)
+
+      for (let i = 1; i < lines.length; i++) { // Start from 1 to skip header
+        const values = [];
+        let inQuotes = false;
+        let currentValue = '';
+
+        for (let j = 0; j < lines[i].length; j++) {
+          const char = lines[i][j];
+
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            values.push(currentValue.trim());
+            currentValue = '';
+          } else {
+            currentValue += char;
+          }
+        }
+        values.push(currentValue.trim()); // Add the last value
+
+        rows.push(values);
+      }
+      return rows;
+    }
+
+const tableBody = document.querySelector('tbody');
+    const bookData = parseCSV(books);
+
+    bookData.forEach(row => {
+      const title = row[2];
+      const author = row[3];
+      const themes = row[4].split(',').map(theme => theme.trim());
+      const description = row[6];
+      const isbn = row[7];
+      const targetAge = row[9]; // Target Age is now at index 9
+
+      const newRow = tableBody.insertRow();
+      const titleCell = newRow.insertCell();
+      const authorCell = newRow.insertCell();
+      const themesCell = newRow.insertCell();
+      const descriptionCell = newRow.insertCell();
+      const isbnCell = newRow.insertCell();
+      const targetAgeCell = newRow.insertCell();
+
+      titleCell.innerHTML = `<span class="book-title mobile-title">${title}</span>`; // Added mobile-title class
+      authorCell.textContent = author;
+
+      const themeList = document.createElement('ul');
+      themeList.classList.add('theme-list');
+      themes.forEach(theme => {
+        const themeItem = document.createElement('li');
+        themeItem.textContent = theme;
+        themeList.appendChild(themeItem);
+      });
+      themesCell.appendChild(themeList);
+
+      descriptionCell.innerHTML = `<span class="description">${description}</span>`;
+
+      if (isbn) {
+        isbnCell.innerHTML = `<a href="https://isbnsearch.org/isbn/${isbn}" target="_blank">${isbn}</a>`;
+      } else {
+        isbnCell.textContent = ""; 
+      }
+
+      if (targetAge) {
+        const targetAgeList = document.createElement('ul');
+        targetAgeList.classList.add('theme-list'); // Reuse the same styling
+        const targetAgeItem = document.createElement('li');
+        targetAgeItem.textContent = targetAge;
+        targetAgeList.appendChild(targetAgeItem);
+        targetAgeCell.appendChild(targetAgeList);
+      } else {
+        targetAgeCell.textContent = "";
+      }
+     
+      titleCell.classList.add("mobile-title");
+      isbnCell.classList.add("mobile-isbn");
+      authorCell.classList.add("desktop-only"); // Hide on mobile
+      themesCell.classList.add("desktop-only"); // Hide on mobile
+      targetAgeCell.classList.add("desktop-only"); // Hide on mobile
+      descriptionCell.classList.add("desktop-only"); // Hide on mobile
+    });
+  </script>
+</body>
+</html>
