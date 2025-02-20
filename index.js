@@ -37,7 +37,7 @@ function parseCSV(csv) {
 async function populateTable() {
   try {
 
-    const csvData = await loadCSV('/bookdata.csv');
+    const csvData = await loadCSV('/booklist.csv');
     const bookData = parseCSV(csvData);
     const tableBody = document.querySelector('tbody');
     bookData.forEach(row => {
