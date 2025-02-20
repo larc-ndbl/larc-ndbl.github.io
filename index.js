@@ -36,7 +36,6 @@ function parseCSV(csv) {
 
 async function populateTable() {
   try {
-
     const csvData = await loadCSV('/booklist.csv');
     const bookData = parseCSV(csvData);
     const tableBody = document.querySelector('tbody');
@@ -49,6 +48,7 @@ async function populateTable() {
       const targetAge = row[9]; // Target Age is now at index 9
 
       const newRow = tableBody.insertRow();
+      newRow.id = isbn; // Set the row's ID to the ISBN.
       const titleCell = newRow.insertCell();
       const authorCell = newRow.insertCell();
       const themesCell = newRow.insertCell();
@@ -94,6 +94,15 @@ async function populateTable() {
       targetAgeCell.classList.add("desktop-only"); // Hide on mobile
       descriptionCell.classList.add("desktop-only"); // Hide on mobile
     });
+    // Scroll to the anchor if it exists.
+    if (window.location.hash) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetId = urlParams.get('isbn');
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView();
+      }
+    }
   } catch (error) {
     console.error("Error populating table:", error);
     document.querySelector('tbody').innerHTML = `<tr><td colspan="6">Error loading book data.</td></tr>`
