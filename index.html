@@ -13,8 +13,6 @@
   <h1>Books with themes of Neurodiversity</h1>
   <p>Distributed by the Los Altos Rotary Satellite Club -- Neurodiversity Book List</p>
 
-</body>
-</html>
 <table>
     <thead>
         <tr>
@@ -988,3 +986,23 @@
         </tr>
     </tbody>
 </table>
+  <script>
+      function getQueryParam(name) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(name);
+      }
+
+      function scrollToIsbn() {
+          const isbnParam = getQueryParam('isbn');
+          if (isbnParam) {
+              const targetElement = document.getElementById(isbnParam);
+              if (targetElement) {
+                  targetElement.scrollIntoView();
+              }
+          }
+      }
+
+      scrollToIsbn(); // Call the function when the page loads
+  </script>
+</body>
+</html>
